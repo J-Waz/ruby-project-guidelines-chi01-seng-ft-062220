@@ -1,0 +1,16 @@
+User.create(name: "Mork")
+User.create(name: "Bill")
+User.create(name: "terry")
+User.create(name: "matthew")
+User.create(name: "gail")
+
+Match.create(home_team: "Wolves", away_team: "dogs", location: "london")
+Match.create(home_team: "Wolves", away_team: "cats", location: "london")
+Match.create(home_team: "cats", away_team: "mice", location: "paris")
+Match.create(home_team: "bears", away_team: "dogs", location: "paris")
+Match.create(home_team: "mice", away_team: "dogs", location: "chicago")
+
+Favorite.create(user_id: 1, match_id:1)
+Favorite.create(user_id: 1, match_id:2)
+Favorite.create(user_id: 4, match_id:1)
+Favorite.create(user_id: 4, match_id:4)
