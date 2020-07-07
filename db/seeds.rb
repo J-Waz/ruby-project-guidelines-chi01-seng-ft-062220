@@ -1,0 +1,16 @@
+User.create(name: "Mork", age: 18, hometown: "Chicago")
+User.create(name: "Bill", age: 29, hometown: "Detroit")
+User.create(name: "terry", age: 29, hometown: "Liverpool")
+User.create(name: "matthew", age: 32, hometown: "Manchester")
+User.create(name: "gail", age: 27, hometown: "Whales")
+
+Match.create(away_team: "Wolves", home_team: "dogs", match_date: '9999-12-31 23:59:59', start_time: '23:59:59.9999999')
+Match.create(away_team: "Wolves", home_team: "dogs", match_date: '9999-12-31 23:59:59', start_time: '23:59:59.9999999')
+Match.create(away_team: "Wolves", home_team: "dogs", match_date: '9999-12-31 23:59:59', start_time: '23:59:59.9999999')
+Match.create(away_team: "Wolves", home_team: "dogs", match_date: '9999-12-31 23:59:59', start_time: '23:59:59.9999999')
+Match.create(away_team: "Wolves", home_team: "dogs", match_date: '9999-12-31 23:59:59', start_time: '23:59:59.9999999')
+
+Favorite.create(user_id: 1, match_id:1)
+Favorite.create(user_id: 1, match_id:2)
+Favorite.create(user_id: 4, match_id:1)
+Favorite.create(user_id: 4, match_id:4)
