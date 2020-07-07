@@ -29,6 +29,8 @@ def user_input
         add_to_favorites()
     elsif answer == 'MY FAVORITES' 
         ap $user.favorites
+        puts "Would you like to remove any favorites?"
+        #TODO write out removal user input logic
         user_input()
     else 
         puts "Sorry, improper input."
