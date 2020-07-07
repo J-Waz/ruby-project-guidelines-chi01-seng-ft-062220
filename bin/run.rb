@@ -2,4 +2,7 @@ require_relative '../config/environment.rb'
 
 
 
-puts "HELLO WORLD"
+# puts "HELLO WORLD"
+welcome()
+display_options()
+user_input()

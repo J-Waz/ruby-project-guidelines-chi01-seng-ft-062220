@@ -13,6 +13,4 @@ class Match < ActiveRecord::Base
     def self.sort_by_date(date)
         Match.all.select { |match| match.date == date}
     end
-
-
 end
