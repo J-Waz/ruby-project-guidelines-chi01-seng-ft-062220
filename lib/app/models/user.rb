@@ -19,5 +19,9 @@ class User < ActiveRecord::Base
         self.matches.all.select { |match| match.date == date}
     end
 
+    def remove_favorite(id)
+        Favorite.destroy(id)
+    end
+
 
 end
