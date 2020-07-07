@@ -1,11 +1,12 @@
 ### DEFINE AP TEXT OBJECTS HERE ***
-$greeting = "Hello, welcome to BIG SPORTS CLI APP"
+$greeting = """Hello, welcome to BIG SPORTS CLI APP
+                Whats your name? """
 
 ###################################
 
 def welcome
-    puts $greeting.colorize(:color => :light_blue, :background => :red)
-    puts "whats your name?"
+    puts $greeting.colorize(:color => :light_blue)
+    # puts "whats your name?"
     print "> "
     name = gets.chomp
 
@@ -24,19 +25,33 @@ def user_input
     answer = gets.chomp
 
     if answer == 'SEE MATCHES'
-        ap Match.all
+        Match.all.each do |match|
+            ap "#{match.home_team} play #{match.away_team} at #{match.location}"
+        end
         user_input()
+
     elsif answer == 'FIND MATCHES'
         puts "What team would you like to find?"
         print "> "
         team = gets.chomp 
         ap Match.sort_by_team(team)
         add_to_favorites()
+
     elsif answer == 'MY FAVORITES' 
-        ap $user.favorites
-        puts "Would you like to remove any favorites?"
+        $user.matches.each do |match|
+            ap "#{match.home_team} play #{match.away_team} at #{match.location}"
+        end
+        puts "Would you like to remove any favorites Y/N?"
         #TODO write out removal user input logic
-        user_input()
+        answer = gets.chomp
+            if answer == "Y"
+                #TODO delete logic
+            elsif answer == 'N'
+                user_input()
+            else
+                puts "Sorry, improper input."
+                user_input()
+            end
     else 
         puts "Sorry, improper input."
         user_input()
@@ -53,7 +68,11 @@ def add_to_favorites
             number = gets.chomp 
             Favorite.create(user_id: $user.id, match_id: number)
             puts "your favorites are now:"
-            ap $user.favorites
+             
+            $user.matches.each do |match|
+                ap "#{match.home_team} play #{match.away_team} at #{match.location}"
+            end
+
             display_options()
             user_input()
         elsif answer == "N"
