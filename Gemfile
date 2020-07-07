@@ -10,3 +10,4 @@ gem "faker"
 gem 'rake'
 gem 'awesome_print'
 gem 'spreadsheet'
+gem 'colorize'

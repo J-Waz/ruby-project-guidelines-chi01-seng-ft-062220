@@ -1,5 +1,10 @@
+### DEFINE AP TEXT OBJECTS HERE ***
+$greeting = "Hello, welcome to BIG SPORTS CLI APP"
+
+###################################
+
 def welcome
-    puts "Hello, welcome to BIG SPORTS CLI APP"
+    puts $greeting.colorize(:color => :light_blue, :background => :red)
     puts "whats your name?"
     print "> "
     name = gets.chomp
